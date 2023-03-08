@@ -1,12 +1,12 @@
 '''Random namespace for JAX.'''
 
-# FIXME implement the functions below
-raise NotImplementedError
-
 import jax
 import jax.random
 
 RandomState = jax.Array
+
+# FIXME implement the functions below
+raise NotImplementedError
 
 
 def random_state(seed=None):
