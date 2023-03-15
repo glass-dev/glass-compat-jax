@@ -1,14 +1,5 @@
-'''Compatibility layer for JAX.'''
+'''Array namespace for JAX.'''
 
-import sys
-
-
-def array_namespace(*objs):
-    if 'jax' not in sys.modules:
-        raise TypeError
-    import jax
-    for obj in objs:
-        if not isinstance(obj, jax.Array):
-            raise TypeError
-    from . import array
-    return array
+# FIXME requires some function aliases and fixes, see array_api_compat.numpy
+from jax.numpy import *  # noqa
+from . import random, healpix  # noqa
