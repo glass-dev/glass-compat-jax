@@ -2,19 +2,22 @@
 
 import jax
 import jax.random
+import os
+import sys
 
 RandomState = jax.Array
 
 # FIXME implement the functions below
-raise NotImplementedError
 
 
 def random_state(seed=None):
-    return jax.random.default_rng(seed)
+    if seed is None:
+        seed = int.from_bytes(os.urandom(8), sys.byteorder)
+    return jax.random.PRNGKey(seed)
 
 
 def split(rand):
-    return rand, rand
+    return jax.random.split(rand)
 
 
 def standard_normal(rand, shape=None):

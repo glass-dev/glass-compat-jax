@@ -1,4 +1,3 @@
 '''HEALPix namespace for JAX.'''
 
-# FIXME requires JAX compatible healpix module
-raise NotImplementedError
+# FIXME implement JAX compatible healpix module
